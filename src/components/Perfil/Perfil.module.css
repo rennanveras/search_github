@@ -1,0 +1,21 @@
+.banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 180px 0 40px;
+    margin-bottom: 80px;
+    background-color: inherit;
+}
+
+.avatar {
+    width: 160px;
+    height: inherit;
+    border-radius: 50%;
+    border: 4px solid var(--colorSegundary)
+}
+
+.name {
+    margin: 8px 0;
+    font-size: 24px;
+    color: var(--colorSegundary);
+}

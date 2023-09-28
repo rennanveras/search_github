@@ -1,17 +1,26 @@
 .list {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 16px;
+
 }
+
 
 .listItem{
     list-style: none;
     padding: 16px;
-    border: 1px solid rgba(0,0,0,.1)
+    border: 1px solid rgba(0,0,0,.1);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .listItemName b, .listItemLanguage b{
     margin-right: 8px;
+}
+.listItemName  {
+    margin-bottom: 8px;
 }
 
 .listItemLink{
@@ -22,5 +31,62 @@
     margin-top: 8px;
     padding: 8px;
     text-decoration:none;
+    border-radius: 5px;
+    text-shadow:  1px 1px 3px #000;
 }
 
+.error {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+.areaLoading {
+    display: flex;
+}
+
+.loading {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 8px #dfe0e1 solid;
+    border-right-color: #1e63f9;
+    animation-name: spin;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+    text-align: center;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+
+@media (max-width:1024px) {
+    .list {
+        margin: 0 10px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width:768px) {
+    .listItem {
+        width: 100%;
+    }
+
+    .listItemName b, .listItemLanguage b{
+        margin-right: 2;
+        display: block;
+    }
+}
+
+@media (max-width:520px) {
+    .list {
+        grid-template-columns: 1fr;
+    }
+}
